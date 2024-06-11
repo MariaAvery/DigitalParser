@@ -1,0 +1,48 @@
+using System; 
+using System.Collections.Generic; 
+using System.Linq; 
+using System.Text; 
+using System.Threading.Tasks;
+
+namespace DigitParser { internal class Program { static void Main(string[] args) {
+
+        // Prompts user to enter a number containing five digits
+        Console.WriteLine("Please enter one number containing 5 digits (ex. 12345) :\n");
+
+        // Stores users input as a string 
+        String userString = Console.ReadLine();
+
+        // Takes users string and converts it to an integer
+        int userNumbers= Convert.ToInt32(userString);
+
+        // Takes the users integer and picks off each digit 
+        int numbFive = userNumbers% 10;
+        int numbFour = (userNumbers / 10) % 10;
+        int numberThree = (userNumbers / 100) % 10;
+        int numberTwo = (userNumbers / 1000) % 10;
+        int numberOne = (userNumbers / 10000) %10;
+
+        // If user inputs number containing anything other than 5 digits 
+        // User is prompted to only enter 5 digits
+        if (userString.Length != 5)
+        {
+            Console.WriteLine("Please only enter 5 digits!\n");
+            
+        } 
+
+        else
+        {
+            // If user inputs 5 digits each digit gets printed out with three spaces between
+            Console.WriteLine($"{numberOne}" + "   " + $"{numberTwo}" + "   " +
+                $"{numberThree}" + "   " + $"{numbFour}" + "   " + $"{numbFive}");
+        }
+       
+        
+        
+            
+            
+       
+        
+    }
+}
+}
